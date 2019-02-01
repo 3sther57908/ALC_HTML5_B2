@@ -50,8 +50,6 @@ function Game(){
                 
                 Dungeon_Opening();
             }
-            
-           
         }
        else{
         alert("I dont understand "+ dungeon);
@@ -62,11 +60,19 @@ function Game(){
     Dungeon_Opening();
     
     function Dungeon_Opening(){
-        var opening = prompt("In the small opening chamber outside of your cell it is barely illuminated by a small, barred window to your right that is about 10 feet above your head. To your left you see a large retangular table with a lantern, small black bag, and knife on it. \n -Investigate window \n -Go to table");
+        var opening = prompt("In the small opening chamber outside of your cell it is barely illuminated by a small, barred window to your right that is about 10 feet above your head. To your left you see a large retangular table with something on it. \n -Investigate window \n -Go to table");
         
         if(opening == "go to table"||opening == "table"){
             
-            var openingTable = prompt("")
+            var openingTable = prompt("On the table you find a lantern, small black bag, and knife. \n -take everything \n -ignore \n -take lantern");
         }
+        
+        else if(opening == "investigate window" || opening == "window"){
+            
+            var openingWindow = alert("There is nothing new that you havent already observed.");
+            
+            Dungeon_Opening();
+        }
+        
     }
 }
