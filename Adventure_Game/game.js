@@ -31,35 +31,43 @@ Multiline comment
         knife:0,
         lantern:0,
         BadLuck:0,
+        Dog:0,
+        flagpole:0,
     }
 
 Game();
 
 function Game(){
     
+    var enemynames = ["Taco Monster", "Bruce Lee", "Bugs Bunny"];
+    
     alert("The Legend of Brave Royalties!");
     
-    var playerName = prompt("What is your name?");
+    var playerName = prompt("What is your name, warrior?");
     
     alert("Welcome to the land of Narkia, "+ playerName +".");
     
+    //castle dungeon overall
     Castle_Dungeon();
     
     function Castle_Dungeon(){
-        var dungeon = prompt("You wake up in a pitch black place... The ground is wet and you can a hear a faint dripping sound from somewhere nearby. After getting up and wandering around for a bit you discover that you are in an underground, circular prison cell. There is a door on the left side of the space, that is the only exit. Probably wasnt the best idea to call the queen ugly and fat in front of Palace guards at that Tavern. \n -Try the door \n -Lay down and wait for a guard or something \n -Search floor to hopefully find something useful").lowercase();
+        var dungeon = prompt("You wake up in a pitch black place... The ground is wet and you can a hear a faint dripping sound from somewhere nearby. After getting up and wandering around for a bit you discover that you are in an underground, circular prison cell. There is a door on the left side of the space, that is the only exit. Probably wasnt the best idea to call the queen ugly and fat in front of Palace guards at that Tavern. \n -Try the door \n -Lay down and wait for a guard or something \n -Search floor to hopefully find something useful").toLowerCase();
     
+        //dungeon door
         if(dungeon == "try door" || dungeon == "door"){
             
-            var dungeonDoor = confirm("You check the door... It's locked. \n Go back?").lowercase();
+            var dungeonDoor = confirm("You check the door... It's locked. \n Go back?").toLowerCase();
             
             Castle_Dungeon();
         }
+        //dungeon wait
         else if(dungeon == "lay down and wait"|| dungeon == "wait"){
             
             var dungeonWait = confirm("You wait but no one comes for you.");
             
             Castle_Dungeon();
         }
+        //dungeon search
         else if(dungeon == "search floor"|| dungeon == "search"){
             
             var dungeonSearch = confirm("You Vigourously search the dungeon floor... You found a key!! You try the key on the door and it unlocks. \n Do you continue?");
@@ -78,20 +86,25 @@ function Game(){
         Castle_Dungeon();
         }
     }
-    
+    //dungeon opening overall
     Dungeon_Opening();
     
     function Dungeon_Opening(){
-        var opening = prompt("In the small opening chamber outside of your cell it is barely illuminated by a small, barred window to your right that is about 10 feet above your head.  Though the room is illuminated it is too dark for it to be wise to proceed forward. To your left you see a large retangular table with something on it. \n -Investigate window \n -Go to table").lowercase();
+        var opening = prompt("In the small opening chamber outside of your cell it is barely illuminated by a small, barred window to your right that is about 10 feet above your head.  Though the room is illuminated it is too dark for it to be wise to proceed forward. To your left you see a large retangular table with something on it. \n -Investigate window \n -Go to table").toLowerCase();
         
+        //dungeon table overall
         if(opening == "go to table"||opening == "table"){
+           
+    Openingtable();
             
-            var openingTable = prompt("On the table you find a lantern, small black bag with lunch in it, and knife. \n -take everything \n -ignore \n -take lantern").lowercase();
+    function Openingtable(){
+        var openingTable = prompt("On the table you find a lantern, small black bag with lunch in it, and knife. \n -take everything \n -ignore \n -take lantern").toLowerCase();
             
+        //dungeon table take everything
             if(openingTable == "take everything" || openingTable == "everything"){
                 var openingTableALL = confirm("Are you sure?");
                 
-                if(openingTableALL = true){
+                if(openingTableALL == true){
                     alert("You have taken everything on the table but you have been cursed with some bad luck because you stole more than you needed.  Thieves honor.");
                     (inventory.knife ++);
                     (inventory.lunch ++);
@@ -99,12 +112,38 @@ function Game(){
                     (inventory.BadLuck ++);
                     
                 }
-            else{
-                openingTable();
+                else{
+                    alert("Ok.");
+                    
+                    Openingtable();
+                }
+                
             }
+        //dungeon table take lantern
+        else if(openingTable == "take lantern" || openingTable == "lantern"){
+            var openingTableLantern = confirm("Are you sure?");
+            
+            if(openingTableLantern == true){
+                confirm("You took the lantern and headed back to the middle of the open room.  Do you wish to turn on the lantern and find a way to continue forward?");
+                (inventory.lantern ++);   
+            }
+            else{
+                alert("Ok.");
+                
+                Openingtable();
+                
+                }
+            }
+        //dungeon table ignore
+        else if(openingTable == "ignore"){
+            var openingTableignore = alert("Alright.")
+            
+            Dungeon_Opening2();
+            
             }
         }
-        
+    }
+        //dungeon opening investigate
         else if(opening == "investigate window" || opening == "window"){
             
             var openingWindow = alert("There is nothing new that you havent already observed.");
@@ -112,5 +151,11 @@ function Game(){
             Dungeon_Opening();
         }
         
+    }
+    //Dungeon Opening Overall 2.0
+    Dungeon_Opening2();
+    
+    function Dungeon_Opening2(){
+        var opening2 = prompt("You have moved back to the center of the open room. Do you wish to wander around in the dark and hope Bruce Lee doesn't come to eat you? \n -risk the dark \n -go back to the table \n -investigate window");
     }
 }
