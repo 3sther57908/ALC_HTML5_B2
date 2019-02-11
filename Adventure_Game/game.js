@@ -82,7 +82,7 @@ function Game(){
             }
         }
        else{
-        alert("I dont understand "+dungeon);
+        alert("I dont understand '"+dungeon+"'.");
         Castle_Dungeon();
         }
     }
@@ -144,18 +144,33 @@ function Game(){
         }
     }
         //dungeon opening investigate
-        else if(opening == "investigate window" || opening == "window"){
+        else if(opening == "investigate window" || opening == "window" || opening == "investigate"){
             
             var openingWindow = alert("There is nothing new that you havent already observed.");
             
             Dungeon_Opening();
         }
         
+        else{
+            alert("I dont know what '"+opening+"' is.");
+            Dungeon_Opening();
+        }
     }
     //Dungeon Opening Overall 2.0
     Dungeon_Opening2();
     
     function Dungeon_Opening2(){
-        var opening2 = prompt("You have moved back to the center of the open room. Do you wish to wander around in the dark and hope Bruce Lee doesn't come to eat you? \n -risk the dark \n -go back to the table \n -investigate window");
+        var opening2 = prompt("You have moved back to the center of the open room. Do you wish to wander around in the dark and hope "+enemynames[1]+" doesn't come to eat you? \n -Risk the dark \n -Go back to the table \n -Investigate window").toLowerCase();
+    
+        switch(opening2){
+            case"investigate" || "window" || "investigate window":
+                alert("There is still nothing new.");
+                Dungeon_Opening2();
+                break;
+            case"risk the dark" || "risk" || "dark":
+                alert(enemynames[1]+" ate your soul.  Game over.");
+                break;               
+            
+        }
     }
 }
