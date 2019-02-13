@@ -34,6 +34,11 @@ Multiline comment
         Dog:0,
         flagpole:0,
     }
+    
+var quitGame = function (){
+        alert("Game Over!");
+    quitGame();
+    }
 
 Game();
 
@@ -46,6 +51,8 @@ function Game(){
     var playerName = prompt("What is your name, warrior?");
     
     alert("Welcome to the land of Narkia, "+ playerName +".");
+    
+    
     
     //castle dungeon overall
     Castle_Dungeon();
@@ -163,14 +170,17 @@ function Game(){
         var opening2 = prompt("You have moved back to the center of the open room. Do you wish to wander around in the dark and hope "+enemynames[1]+" doesn't come to eat you? \n -Risk the dark \n -Go back to the table \n -Investigate window").toLowerCase();
     
         switch(opening2){
-            case"investigate" || "window" || "investigate window":
+            case"investigate": case"window": case"investigate window":
                 alert("There is still nothing new.");
                 Dungeon_Opening2();
                 break;
-            case"risk the dark" || "risk" || "dark":
+            case"risk the dark": case"risk": case"dark":
                 alert(enemynames[1]+" ate your soul.  Game over.");
-                break;               
-            
+                quitGame();
+                break;              
+            case"go back": case"go back to table": case"go back to table":
+                Openingtable();
+                break;
         }
     }
 }
