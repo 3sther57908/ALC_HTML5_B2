@@ -23,7 +23,8 @@ Multiline comment
 }
 */
 
-    //Javascript Object for an inventory
+
+//Javascript Object for an inventory
     var inventory = {
         coins:5,
         Lunch:0,
@@ -35,6 +36,7 @@ Multiline comment
         flagpole:0,
     }
     
+//quit game repeat function
 var quitGame = function (){
         alert("Game Over!");
     quitGame();
@@ -54,27 +56,27 @@ function Game(){
     
     
     
-    //castle dungeon overall
+//castle dungeon overall
     Castle_Dungeon();
     
     function Castle_Dungeon(){
         var dungeon = prompt("You wake up in a pitch black place... The ground is wet and you can a hear a faint dripping sound from somewhere nearby. After getting up and wandering around for a bit you discover that you are in an underground, circular prison cell. There is a door on the left side of the space, that is the only exit. Probably wasnt the best idea to call the queen ugly and fat in front of Palace guards at that Tavern. \n -Try the door \n -Lay down and wait for a guard or something \n -Search floor to hopefully find something useful").toLowerCase();
     
-        //dungeon door
+//dungeon door
         if(dungeon == "try door" || dungeon == "door"){
             
             var dungeonDoor = confirm("You check the door... It's locked. \n Go back?").toLowerCase();
             
             Castle_Dungeon();
         }
-        //dungeon wait
+//dungeon wait
         else if(dungeon == "lay down and wait"|| dungeon == "wait"){
             
             var dungeonWait = confirm("You wait but no one comes for you.");
             
             Castle_Dungeon();
         }
-        //dungeon search
+//dungeon search
         else if(dungeon == "search floor"|| dungeon == "search"){
             
             var dungeonSearch = confirm("You Vigourously search the dungeon floor... You found a key!! You try the key on the door and it unlocks. \n Do you continue?");
@@ -93,13 +95,13 @@ function Game(){
         Castle_Dungeon();
         }
     }
-    //dungeon opening overall
+//dungeon opening overall
     Dungeon_Opening();
     
     function Dungeon_Opening(){
         var opening = prompt("In the small opening chamber outside of your cell it is barely illuminated by a small, barred window to your right that is about 10 feet above your head.  Though the room is illuminated it is too dark for it to be wise to proceed forward. To your left you see a large retangular table with something on it. \n -Investigate window \n -Go to table").toLowerCase();
         
-        //dungeon table overall
+//dungeon table overall
         if(opening == "go to table"||opening == "table"){
            
     Openingtable();
@@ -107,7 +109,7 @@ function Game(){
     function Openingtable(){
         var openingTable = prompt("On the table you find a lantern, small black bag with lunch in it, and knife. \n -take everything \n -ignore \n -take lantern").toLowerCase();
             
-        //dungeon table take everything
+//dungeon table take everything
             if(openingTable == "take everything" || openingTable == "everything"){
                 var openingTableALL = confirm("Are you sure?");
                 
@@ -126,13 +128,21 @@ function Game(){
                 }
                 
             }
-        //dungeon table take lantern
+//dungeon table take lantern
         else if(openingTable == "take lantern" || openingTable == "lantern"){
             var openingTableLantern = confirm("Are you sure?");
             
             if(openingTableLantern == true){
                 confirm("You took the lantern and headed back to the middle of the open room.  Do you wish to turn on the lantern and find a way to continue forward?");
-                (inventory.lantern ++);   
+                (inventory.lantern ++); 
+                
+                if(openingLantern == true){
+                    Opening_lanternonly();
+                }
+                else{
+                    alert("Smart or foolish? Up to you");
+                    Openingtable();
+                }
             }
             else{
                 alert("Ok.");
@@ -141,7 +151,7 @@ function Game(){
                 
                 }
             }
-        //dungeon table ignore
+//dungeon table ignore
         else if(openingTable == "ignore"){
             var openingTableignore = alert("Alright.")
             
@@ -150,7 +160,7 @@ function Game(){
             }
         }
     }
-        //dungeon opening investigate
+//dungeon opening investigate
         else if(opening == "investigate window" || opening == "window" || opening == "investigate"){
             
             var openingWindow = alert("There is nothing new that you havent already observed.");
@@ -163,7 +173,7 @@ function Game(){
             Dungeon_Opening();
         }
     }
-    //Dungeon Opening Overall 2.0
+//Dungeon Opening Overall 2.0
     Dungeon_Opening2();
     
     function Dungeon_Opening2(){
@@ -175,12 +185,30 @@ function Game(){
                 Dungeon_Opening2();
                 break;
             case"risk the dark": case"risk": case"dark":
-                alert(enemynames[1]+" ate your soul.  Game over.");
+                alert(enemynames[1]+" ate your soul.");
                 quitGame();
                 break;              
-            case"go back": case"go back to table": case"go back to table":
+            case"go back": case"go back to table": case"table":
                 Openingtable();
                 break;
+                
+            default:
+                alert("Um, I dont know what " +opening2+" is")
+        }
+    }
+    //Path you take with only lantern
+    Opening_lanternonly();
+    
+    function Opening_lanternonly(){
+        var openingLantern = confirm("Thanks to the power of light you wont be eaten by "+enemynames[1]+" cant come to eat you! While walking down a long empty corridor you come upon some stairs. Do you go up?");
+        
+        if(lanternonly == true){
+            Staircase();
+        }
+        
+        else{
+            alert("Well I guess we are going back then.");
+            Opening_again();
         }
     }
 }
