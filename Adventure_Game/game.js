@@ -26,14 +26,13 @@ Multiline comment
 
 //Javascript Object for an inventory
     var inventory = {
-        coins:5,
         Lunch:0,
         sword:0,
         knife:0,
         lantern:0,
         BadLuck:0,
         Dog:0,
-        flagpole:0,
+        flagpole:0, 
     }
     
 //quit game repeat function
@@ -109,7 +108,7 @@ function Game(){
     function Openingtable(){
         var openingTable = prompt("On the table you find a lantern, small black bag with lunch in it, and knife. \n -take everything \n -ignore \n -take lantern").toLowerCase();
             
-//dungeon table take everything
+//dungeon table take everything (INCOMPLETE)
             if(openingTable == "take everything" || openingTable == "everything"){
                 var openingTableALL = confirm("Are you sure?");
                 
@@ -196,11 +195,11 @@ function Game(){
                 alert("Um, I dont know what " +opening2+" is")
         }
     }
-    //Path you take with only lantern
+//Path you take with only lantern
     Opening_lanternonly();
     
     function Opening_lanternonly(){
-        var openingLantern = confirm("Thanks to the power of light you wont be eaten by "+enemynames[1]+" cant come to eat you! While walking down a long empty corridor you come upon some stairs. Do you go up?");
+        var openingLantern = confirm("Thanks to the power of light you wont be eaten by "+enemynames[1]+"! While walking down a long empty corridor you come upon some stairs. Do you go up?");
         
         if(lanternonly == true){
             Staircase();
@@ -210,5 +209,17 @@ function Game(){
             alert("Well I guess we are going back then.");
             Opening_again();
         }
+    }
+//Staircase out (INCOMPLETE)
+    Staircase();
+    
+    function Staircase(){
+        var stairCase = prompt("You went up the staircase and made your way out.  Congradulations! You've made it out into the open fresh air without being eaten by a scary monster.... but now what?  You've escaped but now you cant remember your original reason for coming to this country.  \n -Sit and ponder \n -Go North \n -Go South");
+    }
+//Opening Again (INCOMPLETE)
+    Opening_again();
+    
+    function Opening_again(){
+        var openingAgain = prompt("*sigh* And here we are again... This STUPID. FREAKIN. ROOM!  What is wrong with you?! What you you even going to do in here now huh?!  Gonna Go back to that STUPID table and take some more STUPID stuff or are you actually going to move forward in this STUPID game!!! \n -Go to table \n -move back to staircase \n -Just lay down and die");
     }
 }
