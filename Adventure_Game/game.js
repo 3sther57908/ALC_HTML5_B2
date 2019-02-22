@@ -51,6 +51,10 @@ function Game(){
     
     var playerName = prompt("What is your name, warrior?");
     
+    while(!confirm("Are you sure you want "+playerName+" as your name?")){
+        playerName = prompt("What do you want your name to be?");
+    }
+    
     alert("Welcome to the land of Narkia, "+ playerName +".");
     
     
@@ -108,7 +112,7 @@ function Game(){
     function Openingtable(){
         var openingTable = prompt("On the table you find a lantern, small black bag with lunch in it, and knife. \n -take everything \n -ignore \n -take lantern").toLowerCase();
             
-//dungeon table take everything (INCOMPLETE)
+//dungeon table take everything
             if(openingTable == "take everything" || openingTable == "everything"){
                 var openingTableALL = confirm("Are you sure?");
                 
@@ -119,6 +123,7 @@ function Game(){
                     (inventory.lantern ++);
                     (inventory.BadLuck ++);
                     
+                    Opening_takeall();
                 }
                 else{
                     alert("Ok.");
@@ -214,12 +219,32 @@ function Game(){
     Staircase();
     
     function Staircase(){
-        var stairCase = prompt("You went up the staircase and made your way out.  Congradulations! You've made it out into the open fresh air without being eaten by a scary monster.... but now what?  You've escaped but now you cant remember your original reason for coming to this country.  \n -Sit and ponder \n -Go North \n -Go South");
+        var stairCase = prompt("You went up the staircase and made your way out.  Congradulations! You've made it out into the open fresh air without being eaten by a scary monster.... but now what?  You've escaped but now you cant remember your original reason for coming to this country.  \n -Sit and ponder \n -Go North \n -Go South").toLowerCase();
+        
     }
 //Opening Again (INCOMPLETE)
     Opening_again();
     
     function Opening_again(){
-        var openingAgain = prompt("*sigh* And here we are again... This STUPID. FREAKIN. ROOM!  What is wrong with you?! What you you even going to do in here now huh?!  Gonna Go back to that STUPID table and take some more STUPID stuff or are you actually going to move forward in this STUPID game!!! \n -Go to table \n -move back to staircase \n -Just lay down and die");
+        var openingAgain = prompt("*sigh* And here we are again... This STUPID. FREAKIN. ROOM!  What is wrong with you?! What are you even going to do in here now huh?!  Gonna Go back to that STUPID table and take some more STUPID stuff or are you actually going to move forward in this STUPID game!!! \n -Go to table \n -move back to staircase \n -Just lay down and die").toLowerCase();
+    }
+//Opening After taking Everything off of the table (INCOMPLETE)
+    Opening_takeall();
+    
+    function Opening_takeall(){
+        var openingTakeall = prompt("You have gone back to the center of the room, would you like to turn on the lantern and continue forward? Or would you like to risk the dark and hope certain evil creatures dont come to kill you? \n - Light lantern and continue \n - risk the dark").toLowerCase();
+        
+        if(openingTakeall == "light lantern and continue" || "light lantern" || "lantern"){
+            
+            var takeallLantern = confirm("You light the lantern and make your way down a narrow corridor that you didnt realize was there till then. Congrats. You avoided being by the infamous "+enemynames+".  While traveling down the corridor you come across a staircase. would you like to go up?");
+            
+            if(takeallLantern == true){
+                Staircase();
+            }
+            else{
+                alert("Well where else are you going to go? You literally have only one way to go in the small dark dungeon and that is up! \n *You gave up and ended up going up the stiars anyway*");
+                Staircase();
+            }
+        }
     }
 }
