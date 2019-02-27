@@ -47,7 +47,7 @@ function Game(){
     
     var enemynames = ["Taco Monster", "Bruce Lee", "Bugs Bunny"];
     
-    alert("The Legend of Brave Royalties!");
+    alert("The Legend of Brave Confusion!");
     
     var playerName = prompt("What is your name, warrior?");
     
@@ -114,7 +114,14 @@ function Game(){
             
 //dungeon table take everything
             if(openingTable == "take everything" || openingTable == "everything"){
-                var openingTableALL = confirm("Are you sure?");
+                Openingtakeally();
+            }
+
+//Are you sure TakeAll??    
+    Openingtakeally();
+        
+    function Openingtakeally(){            
+        var openingTableALL = confirm("Are you sure?");
                 
                 if(openingTableALL == true){
                     alert("You have taken everything on the table but you have been cursed with some bad luck because you stole more than you needed.  Thieves honor.");
@@ -130,10 +137,10 @@ function Game(){
                     
                     Openingtable();
                 }
-                
-            }
+    }
+            
 //dungeon table take lantern
-        else if(openingTable == "take lantern" || openingTable == "lantern"){
+        if(openingTable == "take lantern" || openingTable == "lantern"){
             var openingTableLantern = confirm("Are you sure?");
             
             if(openingTableLantern == true){
@@ -221,14 +228,42 @@ function Game(){
     function Staircase(){
         var stairCase = prompt("You went up the staircase and made your way out.  Congradulations! You've made it out into the open fresh air without being eaten by a scary monster.... but now what?  You've escaped but now you cant remember your original reason for coming to this country.  \n -Sit and ponder \n -Go North \n -Go South").toLowerCase();
         
+        if(stairCase == "sit and ponder" || "sit" || "ponder"){
+            alert("...")
+            alert("well that was pointless.");
+            Staircase();
+        }
+        else if(stairCase == "go north" || "north"){
+            alert("You make your way north and to your surprise you run into a city ruled by angels.  It is beautiful and bright and positively covered in the color white.  The angels spot you approaching and come to investigate.");
+            
+        }
     }
-//Opening Again (INCOMPLETE)
+//Opening Again
     Opening_again();
     
     function Opening_again(){
-        var openingAgain = prompt("*sigh* And here we are again... This STUPID. FREAKIN. ROOM!  What is wrong with you?! What are you even going to do in here now huh?!  Gonna Go back to that STUPID table and take some more STUPID stuff or are you actually going to move forward in this STUPID game!!! \n -Go to table \n -move back to staircase \n -Just lay down and die").toLowerCase();
+        var openingAgain = prompt("*sigh* And here we are again... This STUPID. FREAKIN. ROOM!  What is wrong with you?! What are you even going to do in here now huh?!  Gonna Go back to that STUPID table and take some more STUPID stuff or are you actually going to move forward in this STUPID game!!! \n -Go to table and take everything on it \n -Move back to staircase \n -Just lay down and die").toLowerCase();
+        
+        if(openingAgain == "go to table and take everything on it" || "go to table" || "take everything on table" || "table"){
+            
+            Openingtakeally();
+        }
+        else if(openingAgain == "move back to staircase" || "staircase" || "go back"){
+        
+            Staircase();
     }
-//Opening After taking Everything off of the table (INCOMPLETE)
+        
+        else if(openingAgain == "just lay down and die" || "lay down and die" || "just die" || "die"){
+            alert("Well I guess if its too hard then...");
+            quitGame();
+        }
+        else{
+            alert("I dont know what "+openingAgain+" is.");
+            Opening_again();
+        }
+        
+    }
+//Opening After taking Everything off of the table
     Opening_takeall();
     
     function Opening_takeall(){
@@ -236,15 +271,23 @@ function Game(){
         
         if(openingTakeall == "light lantern and continue" || "light lantern" || "lantern"){
             
-            var takeallLantern = confirm("You light the lantern and make your way down a narrow corridor that you didnt realize was there till then. Congrats. You avoided being by the infamous "+enemynames+".  While traveling down the corridor you come across a staircase. would you like to go up?");
+            var takeallLantern = confirm("You light the lantern and make your way down a narrow corridor that you didnt realize was there till then. Congrats. You avoided being eaten by the infamous "+enemynames[1]+".  While traveling down the corridor you come across a staircase. would you like to go up?");
             
             if(takeallLantern == true){
                 Staircase();
             }
             else{
-                alert("Well where else are you going to go? You literally have only one way to go in the small dark dungeon and that is up! \n *You gave up and ended up going up the stiars anyway*");
+                alert("Well where else are you going to go? You literally have only one way to go in the small dark dungeon and that is up! \n *You gave up and ended up going up the stiarcase anyway*");
                 Staircase();
             }
+        }
+        else if(openingTakeall == "risk the dark" || "the dark" || "dark"){
+            alert("You decide to brave the dark for some weird reason and end up being eaten by "+enemynames[2]+".  You have died.");
+            quitGame();
+        }
+        else{
+            alert("I dont understand "+takeallLantern+".");
+            Opening_takeall();
         }
     }
 }
