@@ -34,7 +34,6 @@ for (i =1; i <= buyArrows; i++){
 //Javascript Object for an inventory
     var inventory = {
         Lunch:0,
-        sword:0,
         knife:0,
         lantern:0,
         BadLuck:0,
@@ -82,10 +81,9 @@ function Game(){
         var dungeon = prompt("You wake up in a pitch black place... The ground is wet and you can a hear a faint dripping sound from somewhere nearby. After getting up and wandering around for a bit you discover that you are in an underground, circular prison cell. There is a door on the left side of the space, that is the only exit. Probably wasnt the best idea to call the queen ugly and fat in front of Palace guards at that Tavern. \n -Try the door \n -Lay down and wait for a guard or something \n -Search floor to hopefully find something useful").toLowerCase();
     
 //dungeon door
-        if(dungeon == "try door" || dungeon == "door"){
+        if(dungeon == "try the door" || dungeon == "door" || dungeon == "try door"){
             
-            var dungeonDoor = confirm("You check the door... It's locked. \n Go back?").toLowerCase();
-            
+            var dungeonDoor = alert("You check the door... It's locked.").toLowerCase();
             Castle_Dungeon();
         }
 //dungeon wait
