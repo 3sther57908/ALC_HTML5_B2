@@ -1,0 +1,17 @@
+/* stylesheet for mobile app */
+
+/* Reset */
+html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,il,header,footer,nav{
+    margin:0;
+    padding:0;
+}
+
+/* Universal Style */
+body{
+    background-color: bisque;
+}
+div#container{
+    width:1200px;
+    height:800px;
+    background-color:#f3e1ff;
+}
