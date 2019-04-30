@@ -18,16 +18,26 @@ div#container{
     background-color:aliceblue;
 }
 
+header img#applogo{
+    display: block;
+    margin: auto;
+    width: 200px;
+    
+    
+}
 
 header{
+    text-align: center;
     width:94.2%;
     padding: 50px;
     background-color:#fcfbff;
+    
 }
 
 header h1
 {
-    color:#bf19bf;
+    color:#db1ea8;
+    margin: auto;
     font-family:"Montserrat", sans-serif;
     font-size:3.5em;
         
