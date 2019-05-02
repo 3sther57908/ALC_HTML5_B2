@@ -10,6 +10,7 @@ html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,il,header,footer,nav{
 body{
     background-color: #fcf2ff;
 }
+
 div#container{
     width:100%;
     
@@ -26,11 +27,26 @@ header img#applogo{
     
 }
 
+input#filterInput{
+   display: block;
+    margin: auto;
+    text-align: center;
+    width: 40%;
+    
+}
+
+div#content h3
+{
+    text-align: center;
+}
+
+
+
 header{
     text-align: center;
     width:94.2%;
     padding: 50px;
-    background-color:#fcfbff;
+    background-color:#ffffff;
     
 }
 

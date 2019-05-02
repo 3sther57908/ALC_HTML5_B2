@@ -17,16 +17,47 @@
                 <h1>Bubble Gum Shop</h1>
             </header>
             <div id="content">
-                <h3>New Products</h3>
-                <img src="" alt="Product 1" id="product">
+                <h3>Search</h3>
+                 <input type="text" id="filterInput">
                 
             </div>
+            
+             <script>
+        //Get input element
+            let filterInput = document.getElementById('filterInput');
+        //Add event listener
+            filterInput.addEventListener('keyup', filterNames);
+            
+        function filterNames(){
+            //Get value of input
+            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+            
+            // Get names ul
+            let ul = document.getElementById('names');
+            // Get lis from ul
+            let li = ul.querySelectorAll('li.collection-item');
+            
+            // Loop through collection-item lis
+            for(let i = 0;i < li.length;i++){
+                let a = li[i].getElementsByTagName('a')[0];
+            // If matched
+            if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+                li[i].style.display = '';
+            } else {
+                li[i].style.display = 'none';
+                }
+                
+            }
+        }
+        </script>
+            
         <div class="icon-bar">
             
-            <a href="search.html"><i class="fa fa-search"></i></a>
+            <a class="active" href="search.html"><i class="fa fa-search"></i></a>
             <a href="chatspace.html"><i class='far fa-comment-alt'></i></a>
-            <a class="active" href="index.html"><i class="fa fa-home"></i></a>
-            <a href="savelist.html"><i class='fas fa-file-alt'></i></a>
+            <a href="index.html"><i class="fa fa-home"></i></a>
+            <a href="savelist.html"><i class='fas fa-file-alt'></i>
+</a>
             <a href="shoppingcart.html"><i class='fas fa-shopping-basket'></i></a>
             </div>
 <!--            
