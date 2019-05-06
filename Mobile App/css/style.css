@@ -32,6 +32,8 @@ input#filterInput{
     margin: auto;
     text-align: center;
     width: 40%;
+    height: 100%;
+    background-color: white;
     
 }
 
@@ -40,7 +42,11 @@ div#content h3
     text-align: center;
 }
 
-
+canvas#canvas{
+    display: block;
+    margin: auto;
+    width: 20%;
+}
 
 header{
     text-align: center;
@@ -62,6 +68,25 @@ header h1
 div#content{
     width:100%;
     background-color: #ffa1d0;
+}
+
+ul#products{
+    width: 100%;
+    background-color: white;
+    
+}
+
+ul#products li{
+    width: 100%;
+    border-bottom: 1px solid gray;
+    padding: 15px 10px;
+}
+
+ul li#Minty{
+   margin: auto;
+    display: block;
+    text-align: center;
+    font-size: 30px;
 }
 /*
 nav{
