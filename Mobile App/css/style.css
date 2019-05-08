@@ -8,15 +8,12 @@ html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,il,header,footer,nav{
 
 /* Universal Style */
 body{
-    background-color: #fcf2ff;
+    background-color: #c400ff;
 }
 
 div#container{
     width:100%;
-    
-    background-color:#f3e1ff;
-    border: 3px dashed #ff00b1;
-    background-color:aliceblue;
+    background-color:white;
 }
 
 header img#applogo{
@@ -37,6 +34,12 @@ input#filterInput{
     
 }
 
+div#content
+{
+    width: 100%;
+    margin: auto;
+    display: block;
+}
 div#content h3
 {
     text-align: center;
@@ -50,40 +53,50 @@ canvas#canvas{
 
 header{
     text-align: center;
-    width:94.2%;
-    padding: 50px;
+    width:100%;
+/*    padding: 50px;*/
     background-color:#ffffff;
+    
     
 }
 
 header h1
 {
     color:#db1ea8;
-    margin: auto;
+    margin: 15px auto;
     font-family:"Montserrat", sans-serif;
     font-size:3.5em;
         
+}
+div.products{
+    width: 100%;
 }
 
 div#content{
     width:100%;
     background-color: #ffa1d0;
+    padding:15px 0;
 }
 
 ul#products{
     width: 100%;
     background-color: white;
+    margin: auto;
+    display: block;
     
 }
 
 ul#products li{
     width: 100%;
     border-bottom: 1px solid gray;
-    padding: 15px 10px;
+    padding: 15px 0;
+    text-align: center;
+    margin: auto;
+    display: block;
 }
 
-ul li#Minty{
-   margin: auto;
+ul li#Section{
+    margin: auto;
     display: block;
     text-align: center;
     font-size: 30px;
@@ -121,7 +134,7 @@ nav ul li:hover{
 }
 */
 .icon-bar {
-    position:absolute;
+    position:fixed;
     bottom:0;
     width: 100%;
     background-color: #888888;
@@ -129,6 +142,7 @@ nav ul li:hover{
 }
 
 .icon-bar a {
+    display: block;
     float: left;
     width: 20%;
     text-align: center;

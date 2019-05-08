@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initil-scale=1.0">
+        <meta http-quiv="X-UA-Compatible" content="ie=edge">
         <title>Mobile App</title>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -23,34 +24,6 @@
                 
             </div>
             
-             <script>
-        //Get input element
-            let filterInput = document.getElementById('filterInput');
-        //Add event listener
-            filterInput.addEventListener('keyup', filterNames);
-            
-        function filterNames(){
-            //Get value of input
-            let filterValue = document.getElementById('filterInput').value.toUpperCase();
-            
-            // Get names ul
-            let ul = document.getElementById('names');
-            // Get lis from ul
-            let li = ul.querySelectorAll('li.collection-item');
-            
-            // Loop through collection-item lis
-            for(let i = 0;i < li.length;i++){
-                let a = li[i].getElementsByTagName('a')[0];
-            // If matched
-            if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
-                li[i].style.display = '';
-            } else {
-                li[i].style.display = 'none';
-                }
-                
-            }
-        }
-        </script>
         <div class="icon-bar">
             
             <a class="active" href="search.html"><i class="fa fa-search"></i></a>
@@ -75,10 +48,11 @@
                 
             </footer>
 -->
-        </div>
         
+            <div class="products">
+                
         <ul id="products" class="collection with-header">
-                    <li id="Minty" class="Minty">
+                    <li id="Section" class="Minty">
                         <h5>Minty</h5>
                     </li>
                     <li class="collection-item">
@@ -87,7 +61,86 @@
                     <li class="collection-item">
                         <a href="#">SpearMint</a>
                     </li>
+                    <li class="collection-item">
+                        <a href="#">Peppermint</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Polar Ice</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Smooth Mint</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Winterfresh</a>
+                    </li>
+                    <li id="Section" class="Sweet">
+                        <h5>Sweet</h5>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Classic Bubble</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Sweet Watermelon</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Berry Burst</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Wrigley's Juicy Fruit</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Bubble Yum Cotton</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Bazooka Original and Blue Razz</a>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Bubblicious Watermelon</a>
+                    </li>
+                    <li id="Section" class="Random">
+                        <h5>Random</h5>
+                    </li>
+                    <li class="collection-item">
+                        <a href="#">Cinnamon</a>
+                    </li>
+                    <li>
+                        &nbsp;
+                    </li>
+                    <li>
+                        &nbsp;
+                    </li>
                 </ul>
+            </div>
+        </div>
+
+                <script>
+        //Get input element
+            let filterInput = document.getElementById('filterInput');
+        //Add event listener
+            filterInput.addEventListener('keyup', filterNames);
+            
+        function filterNames(){
+            //Get value of input
+            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+            
+            // Get names ul
+            let ul = document.getElementById('products');
+            // Get lis from ul
+            let li = ul.querySelectorAll('li.collection-item');
+            
+            // Loop through collection-item lis
+            for(let i = 0;i < li.length;i++){
+                let a = li[i].getElementsByTagName('a')[0];
+            // If matched
+            if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+                li[i].style.display = '';
+            } else {
+                li[i].style.display = 'none';
+                }
+                
+            }
+        }
+            </script>
         
     </body>
 </html>
