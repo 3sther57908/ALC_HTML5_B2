@@ -8,7 +8,7 @@ html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,il,header,footer,nav{
 
 /* Universal Style */
 body{
-    background-color: #c400ff;
+    background-color: #ffe3fe;
 }
 
 div#container{
@@ -80,15 +80,16 @@ div#content{
 
 ul#products{
     width: 100%;
-    background-color: white;
+    background-color: #fff7fb;
     margin: auto;
     display: block;
     
 }
 
 ul#products li{
+    color: gray;
     width: 100%;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #d0d0d0;
     padding: 15px 0;
     text-align: center;
     margin: auto;
@@ -96,6 +97,7 @@ ul#products li{
 }
 
 ul li#Section{
+    color: #be126f;
     margin: auto;
     display: block;
     text-align: center;
@@ -158,6 +160,35 @@ nav ul li:hover{
 
 .active {
     background-color: #ffc9e9;
+}
+
+div#product_grp{
+    max-width: 100%;
+    max-width: 20%;
+    margin: auto;
+}
+
+figure.product{
+    float: left;
+    margin: 10px;
+    min-width: 30%;
+    min-width: 50%;
+    background-color: pink;
+    border-radius: 5%;
+}
+
+figure.product img{
+    display: block;
+    padding: 10px 0;
+    width: 80%;
+    margin: auto;
+}
+
+figure.product figcaption{
+    text-align: center;
+    color: white;
+    font-family: fantasy;
+    font-size: 20px;
 }
 /*
 footer{
