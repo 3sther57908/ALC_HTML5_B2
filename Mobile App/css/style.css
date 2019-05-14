@@ -8,7 +8,8 @@ html,body,div,h1,h2,h3,h4,h5,h6,p,ul,ol,il,header,footer,nav{
 
 /* Universal Style */
 body{
-    background-color: #ffe3fe;
+    background-color: white;
+    margin: 
 }
 
 div#container{
@@ -36,6 +37,7 @@ input#filterInput{
 
 div#content
 {
+    float: left;
     width: 100%;
     margin: auto;
     display: block;
@@ -43,6 +45,21 @@ div#content
 div#content h3
 {
     text-align: center;
+}
+
+div#body
+{
+    background-color:#ffe3fe;
+    margin: auto;
+    display: block;
+}
+
+div#body h3
+{
+    text-align: center;
+    color: black;
+    font-family: "montserrat";
+    
 }
 
 canvas#canvas{
@@ -81,8 +98,6 @@ div#content{
 ul#products{
     width: 100%;
     background-color: #fff7fb;
-    margin: auto;
-    display: block;
     
 }
 
@@ -92,14 +107,10 @@ ul#products li{
     border-bottom: 1px solid #d0d0d0;
     padding: 15px 0;
     text-align: center;
-    margin: auto;
-    display: block;
 }
 
 ul li#Section{
     color: #be126f;
-    margin: auto;
-    display: block;
     text-align: center;
     font-size: 30px;
 }
@@ -190,6 +201,39 @@ figure.product figcaption{
     font-family: fantasy;
     font-size: 20px;
 }
+
+div.keepOpen{
+    clear:both;
+}
+
+ legend, span, input, textarea {
+		display:block;
+		margin:auto;
+		text-align:center;
+		font-family:fantasy;
+         font-size: 18px;
+		color:#aa0055;
+}
+
+@media screen and (max-width: 1200px) {
+	figure.product{
+		float:none;
+		margin:10px auto;
+		min-width:50%;
+		max-width:100%;
+		background-color: pink;
+		border-radius:5%;
+	}
+
+	 legend, span, input, textarea {
+		display:block;
+		margin:auto;
+		text-align:center;
+		font-family:fantasy;
+         font-size: 18px;
+		color:#aa0055;
+}
+
 /*
 footer{
     position:absolute;
