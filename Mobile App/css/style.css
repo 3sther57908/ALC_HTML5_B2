@@ -42,7 +42,21 @@ div#content
     margin: auto;
     display: block;
 }
+
+div#content h4
+{
+    text-align: center;
+    margin: 15px 0;
+}
+
 div#content h3
+{
+    text-align: center;
+    font-size: 150%;
+    margin: 10px 0;
+}
+
+div#content p
 {
     text-align: center;
 }
